@@ -10,6 +10,7 @@ public class Main {
             System.out.println("Select the operation");
             System.out.println("1. Display");
             System.out.println("2. Append");
+            System.out.println("3. Remove Last");
             System.out.println("0. Exit");
             option=s.nextInt();
             if(option==0)
@@ -24,6 +25,10 @@ public class Main {
                 System.out.println("Enter value to append");
                 int val=s.nextInt();
                 myLinkedList.append(val);
+            }
+            else if(option==3)
+            {
+                System.out.println(myLinkedList.removeLast().value);
             }
         }while(option!=0);
 

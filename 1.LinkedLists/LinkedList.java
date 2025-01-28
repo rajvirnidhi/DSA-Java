@@ -20,9 +20,10 @@ public class LinkedList
     {
         Node temp=head;
         while (temp!=null) {
-            System.out.println(temp.value);
+            System.out.print(temp.value+" ");
             temp=temp.next;
         }
+        System.out.println("");
     }
 
     public void append(int value)
@@ -38,6 +39,30 @@ public class LinkedList
             tail=newNode;
         }
         length++;
+    }
+
+    public Node removeLast()
+    {
+        if(length==0)
+            return null;
+        if(length==1)
+        {
+            head=tail=null;
+            length--;
+            return head;
+        }
+        Node temp=head;
+        Node pre=head;
+        while(temp.next!=null)
+        {
+            pre=temp;
+            temp=temp.next;
+        }
+
+        pre.next=null;
+        length--;
+        tail=pre;
+        return temp;
     }
     
 }
