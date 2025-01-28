@@ -11,6 +11,8 @@ public class Main {
             System.out.println("1. Display");
             System.out.println("2. Append");
             System.out.println("3. Remove Last");
+            System.out.println("4. Prepend");
+            System.out.println("5. Remove First");
             System.out.println("0. Exit");
             option=s.nextInt();
             if(option==0)
@@ -28,7 +30,31 @@ public class Main {
             }
             else if(option==3)
             {
-                System.out.println(myLinkedList.removeLast().value);
+                try
+                {
+                    System.out.println(myLinkedList.removeLast().value);
+                }
+                catch(NullPointerException e)
+                {
+                    System.out.println("Linked list is empty");
+                }
+            }
+            else if(option==4)
+            {
+                System.out.println("Enter value to prepend");
+                int val=s.nextInt();
+                myLinkedList.prepend(val);
+            }
+            else if(option==5)
+            {
+                try
+                {
+                    System.out.println(myLinkedList.removeFirst().value);
+                }
+                catch(NullPointerException e)
+                {
+                    System.out.println("Linked list is empty");
+                }
             }
         }while(option!=0);
 
