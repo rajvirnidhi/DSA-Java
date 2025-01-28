@@ -13,6 +13,8 @@ public class Main {
             System.out.println("3. Remove Last");
             System.out.println("4. Prepend");
             System.out.println("5. Remove First");
+            System.out.println("6. Get At Index");
+            System.out.println("7. Set At Index");
             System.out.println("0. Exit");
             option=s.nextInt();
             if(option==0)
@@ -55,6 +57,28 @@ public class Main {
                 {
                     System.out.println("Linked list is empty");
                 }
+            }
+            else if(option==6)
+            {
+                System.out.println("Enter index");
+                int index=s.nextInt();
+                try
+                {
+                    System.out.println(myLinkedList.get(index).value);
+                }
+                catch(NullPointerException e)
+                {
+                    System.out.println("Null at index "+index);
+                }
+            }
+            else if(option==7)
+            {
+                System.out.println("Enter index to set value");
+                int index = s.nextInt();
+                System.out.println("Enter value to set");
+                int val = s.nextInt();
+
+                System.out.println(myLinkedList.set(index, val)? "Set success": "Set failed");
             }
         }while(option!=0);
 

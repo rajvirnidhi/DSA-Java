@@ -93,4 +93,29 @@ public class LinkedList
         temp.next=null;
         return temp;
     }
+
+    public Node get(int index)
+    {
+        if(index<0 && index>length)
+            return null;
+        Node temp=head;
+        for(int i=0;i<index;i++)
+        {
+            temp=temp.next;
+        }
+        return temp;
+    }
+
+    public boolean set(int index, int val)
+    {
+        if(index<0 && index>length)
+            return false;
+        Node temp=get(index);
+        if(temp!=null)
+        {
+            temp.value = val;
+            return true;
+        }
+        return false;
+    }
 }
