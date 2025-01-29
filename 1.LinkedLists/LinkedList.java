@@ -118,4 +118,23 @@ public class LinkedList
         }
         return false;
     }
+
+    public void Reverse()
+    {
+        Node before = null;
+        Node after = head;
+        Node temp = head;
+
+        head=tail;
+        tail=temp;
+
+        while(after!=null)
+        {
+            temp=after;
+            after=temp.next;
+            temp.next=before;
+            before=temp;
+        }
+        head=temp;
+    }
 }

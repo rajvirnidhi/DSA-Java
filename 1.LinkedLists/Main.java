@@ -15,6 +15,7 @@ public class Main {
             System.out.println("5. Remove First");
             System.out.println("6. Get At Index");
             System.out.println("7. Set At Index");
+            System.out.println("8. Reverse List");
             System.out.println("0. Exit");
             option=s.nextInt();
             if(option==0)
@@ -79,6 +80,11 @@ public class Main {
                 int val = s.nextInt();
 
                 System.out.println(myLinkedList.set(index, val)? "Set success": "Set failed");
+            }
+            else if(option==8)
+            {
+                System.out.println("Reversed the list");
+                myLinkedList.Reverse();
             }
         }while(option!=0);
 
