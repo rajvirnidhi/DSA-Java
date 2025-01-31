@@ -26,6 +26,13 @@ public class Main
                     myStack.push(value);
                     break;
                 case 3:
+                    try
+                    {
+                        System.out.println("Poped value "+ myStack.pop().value);
+                    }
+                    catch (NullPointerException e) {
+                        System.out.println("Sorry... No value to Pop");
+                    }
                     break;
             }
         }while(option!=0);

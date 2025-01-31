@@ -35,4 +35,22 @@ public class MyStack
         }
         height++;
     }
+
+    public Node pop()
+    {
+        if(height==0)
+            return null;
+        Node temp = top;
+        if(height==1)
+        {
+            top=null;
+        }
+        else
+        {
+            top=temp.next;
+            temp.next=null;
+        }
+        height--;
+        return temp;
+    }
 }
