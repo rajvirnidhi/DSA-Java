@@ -34,6 +34,15 @@ public class Main
                         System.out.println("Sorry... No value to Pop");
                     }
                     break;
+                    case 4:
+                    try
+                    {
+                        System.out.println("Top value "+ myStack.peek().value);
+                    }
+                    catch (NullPointerException e) {
+                        System.out.println("Sorry... No value to peek");
+                    }
+                    break;
             }
         }while(option!=0);
     }

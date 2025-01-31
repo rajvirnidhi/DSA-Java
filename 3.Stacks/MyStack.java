@@ -53,4 +53,11 @@ public class MyStack
         height--;
         return temp;
     }
+
+    public Node peek()
+    {
+        if(height==0)
+            return null;
+        return top;
+    }
 }
