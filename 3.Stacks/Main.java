@@ -34,7 +34,7 @@ public class Main
                         System.out.println("Sorry... No value to Pop");
                     }
                     break;
-                    case 4:
+                case 4:
                     try
                     {
                         System.out.println("Top value "+ myStack.peek().value);
