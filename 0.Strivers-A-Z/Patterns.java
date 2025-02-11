@@ -52,6 +52,21 @@ class Patterns
 
         System.out.println("Pattern 17");
         Pattern17(5);
+
+        System.out.println("Pattern 18");
+        Pattern18(5);
+
+        System.out.println("Pattern 19");
+        Pattern19(5);
+
+        System.out.println("Pattern 20");
+        Pattern20(5);
+
+        System.out.println("Pattern 21");
+        Pattern21(5);
+
+        System.out.println("Pattern 22");
+        Pattern22(5);
     }
 
     /*
@@ -483,5 +498,190 @@ class Patterns
         }
     }
 
-    
+    /*
+        Pattern 18
+        E
+        ED
+        EDC
+        EDCB
+        EDCBA
+     */
+    public static void Pattern18(int n)
+    {
+        for(int i=0;i<n;i++)
+        {
+            char ch=(char)('A'+ n-1);
+            for(int j=0;j<=i;j++)
+            {
+                System.out.print(ch--);
+            }
+            System.out.println();
+        }
+    }
+
+    /*
+        Pattern 19
+        **********
+        ****  ****
+        ***    ***
+        **      **
+        *        *
+        *        *
+        **      **
+        ***    ***
+        ****  ****
+        **********
+
+     */
+    public static void Pattern19(int n)
+    {
+        for(int i=0;i<n;i++)
+        {
+            for(int j=n-i;j>0;j--)
+            {
+                System.out.print("*");
+            }
+
+            for(int j=0;j<2*i;j++)
+            {
+                System.out.print(" ");
+            }
+
+            for(int j=n-i;j>0;j--)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<=i;j++)
+            {
+                System.out.print("*");
+            }
+
+            for(int j=0;j<((2*n)-(2*i)-2);j++)
+            {
+                System.out.print(" ");
+            }
+
+            for(int j=0;j<=i;j++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    /*
+        Pattern 20
+        *        *
+        **      **
+        ***    ***
+        ****  ****
+        **********
+        ****  ****
+        ***    ***
+        **      **
+        *        *
+     */
+    public static void Pattern20(int n)
+    {
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=i;j++)
+            {
+                System.out.print("*");
+            }
+            for(int j=0;j<((2*n)-(2*i));j++)
+            {
+                System.out.print(" ");
+            }
+            for(int j=i;j>0;j--)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        int count=2;
+        for(int i=1;i<n;i++)
+        {
+            for(int j=n-i;j>0;j--)
+            {
+                System.out.print("*");
+            }
+
+            for(int j=0;j<count;j++)
+            {
+                System.out.print(" ");
+            }
+            count+=2;
+
+            for(int j=n-i;j>0;j--)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    /*
+        Pattern 21
+        *****
+        *   *
+        *   *
+        *   *
+        *****
+     */
+    public static void Pattern21(int n)
+    {
+        for(int i=0;i<n;i++)
+        {
+            if(i==0 || i==n-1) 
+            {    
+                for(int j=0;j<n;j++)
+                {
+                    System.out.print("*");
+                }
+            }
+            else
+            {
+                System.out.print("*");
+                for(int j=0;j<n-2;j++)
+                {
+                    System.out.print(" ");
+                }
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
+
+    /*
+        Pattern 22
+        555555555
+        544444445
+        543333345
+        543222345
+        543212345
+        543222345
+        543333345
+        544444445
+        555555555
+     */
+    public static void Pattern22(int n)
+    {
+        for(int i=0;i<2*n-1;i++)
+        {
+            for(int j=0;j<2*n-1;j++)
+            {
+                int top=i;
+                int left=j;
+                int right=(2*n - 2)-j;
+                int bottom=(2*n - 2)-i;
+                System.out.print(n-Math.min(top,Math.min(Math.min(left,right),bottom)));
+            }
+            System.out.println();
+        }
+    }
 }
